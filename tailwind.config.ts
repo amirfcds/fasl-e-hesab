@@ -13,7 +13,13 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ["Vazirmatn", "system-ui", "sans-serif"],
+        display: ["Vazirmatn", "system-ui", "sans-serif"],
+      },
       colors: {
+        surface: "hsl(var(--surface))",
+        warning: "hsl(var(--warning))",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
