@@ -1,5 +1,5 @@
 import { Mail, Phone, Lock, Wallet } from "lucide-react";
-import { StatusBar } from "./PhoneFrame";
+import { StatusBar } from "../PhoneFrame";
 
 export const LoginScreen = () => (
   <div className="min-h-full hero-bg">
