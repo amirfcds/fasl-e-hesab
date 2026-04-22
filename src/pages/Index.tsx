@@ -1,9 +1,13 @@
 import { PhoneFrame } from "@/components/PhoneFrame";
+import { WelcomeScreen } from "@/components/screens/WelcomeScreen";
 import { LoginScreen } from "@/components/screens/LoginScreen";
+import { RegisterScreen } from "@/components/screens/RegisterScreen";
 import { OtpScreen } from "@/components/screens/OtpScreen";
 import { CreateProfileScreen } from "@/components/screens/CreateProfileScreen";
+import { DashboardScreen } from "@/components/screens/DashboardScreen";
 import { GroupListScreen } from "@/components/screens/GroupListScreen";
 import { CreateGroupScreen } from "@/components/screens/CreateGroupScreen";
+import { GroupDetailScreen } from "@/components/screens/GroupDetailScreen";
 import { GroupOverviewScreen } from "@/components/screens/GroupOverviewScreen";
 import { ExpenseListScreen } from "@/components/screens/ExpenseListScreen";
 import { AddExpenseScreen } from "@/components/screens/AddExpenseScreen";
@@ -13,18 +17,22 @@ import { ProfileScreen } from "@/components/screens/ProfileScreen";
 import { SettingsScreen } from "@/components/screens/SettingsScreen";
 
 const screens = [
-  { label: "۰۱ — ورود / ثبت‌نام", node: <LoginScreen /> },
-  { label: "۰۲ — تأیید کد", node: <OtpScreen /> },
-  { label: "۰۳ — ساخت پروفایل", node: <CreateProfileScreen /> },
-  { label: "۰۴ — لیست گروه‌ها", node: <GroupListScreen /> },
-  { label: "۰۵ — ایجاد گروه", node: <CreateGroupScreen /> },
-  { label: "۰۶ — خلاصه گروه", node: <GroupOverviewScreen /> },
-  { label: "۰۷ — لیست هزینه‌ها", node: <ExpenseListScreen /> },
-  { label: "۰۸ — افزودن هزینه", node: <AddExpenseScreen /> },
-  { label: "۰۹ — ویرایش هزینه", node: <EditExpenseScreen /> },
-  { label: "۱۰ — تسویه‌حساب", node: <SettlementScreen /> },
-  { label: "۱۱ — پروفایل", node: <ProfileScreen /> },
-  { label: "۱۲ — تنظیمات", node: <SettingsScreen /> },
+  { label: "۰۱ — خوش‌آمدگویی", node: <WelcomeScreen /> },
+  { label: "۰۲ — ورود", node: <LoginScreen /> },
+  { label: "۰۳ — ثبت‌نام", node: <RegisterScreen /> },
+  { label: "۰۴ — تأیید کد", node: <OtpScreen /> },
+  { label: "۰۵ — ساخت پروفایل", node: <CreateProfileScreen /> },
+  { label: "۰۶ — داشبورد", node: <DashboardScreen /> },
+  { label: "۰۷ — لیست گروه‌ها", node: <GroupListScreen /> },
+  { label: "۰۸ — ایجاد گروه", node: <CreateGroupScreen /> },
+  { label: "۰۹ — جزئیات گروه (دسته‌بندی)", node: <GroupDetailScreen /> },
+  { label: "۱۰ — خلاصه گروه", node: <GroupOverviewScreen /> },
+  { label: "۱۱ — لیست هزینه‌ها", node: <ExpenseListScreen /> },
+  { label: "۱۲ — افزودن هزینه", node: <AddExpenseScreen /> },
+  { label: "۱۳ — ویرایش هزینه", node: <EditExpenseScreen /> },
+  { label: "۱۴ — تسویه‌حساب", node: <SettlementScreen /> },
+  { label: "۱۵ — پروفایل", node: <ProfileScreen /> },
+  { label: "۱۶ — تنظیمات", node: <SettingsScreen /> },
 ];
 
 const palette = [
