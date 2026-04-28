@@ -1,4 +1,4 @@
-import { Bell, Home, Users, Wallet, User, Plus, TrendingDown, TrendingUp } from "lucide-react";
+import { Bell, Home, Users, Wallet, User, Plus, TrendingDown, TrendingUp, MessageCircle } from "lucide-react";
 import { StatusBar } from "../PhoneFrame";
 
 export const DashboardScreen = () => (
@@ -79,6 +79,7 @@ export const DashboardScreen = () => (
         { i: Home, l: "خانه", active: true },
         { i: Users, l: "گروه‌ها" },
         { i: Wallet, l: "تسویه" },
+        { i: MessageCircle, l: "گفتگوها" },
         { i: User, l: "پروفایل" },
       ].map((n, i) => (
         <button key={i} className="flex flex-col items-center gap-1">

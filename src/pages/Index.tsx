@@ -15,6 +15,11 @@ import { EditExpenseScreen } from "@/components/screens/EditExpenseScreen";
 import { SettlementScreen } from "@/components/screens/SettlementScreen";
 import { ProfileScreen } from "@/components/screens/ProfileScreen";
 import { SettingsScreen } from "@/components/screens/SettingsScreen";
+import { ChatListScreen } from "@/components/screens/ChatListScreen";
+import { PrivateChatScreen } from "@/components/screens/PrivateChatScreen";
+import { GroupChatScreen } from "@/components/screens/GroupChatScreen";
+import { NewChatScreen } from "@/components/screens/NewChatScreen";
+import { ChatGroupInfoScreen } from "@/components/screens/ChatGroupInfoScreen";
 
 const screens = [
   { label: "۰۱ — خوش‌آمدگویی", node: <WelcomeScreen /> },
@@ -33,6 +38,11 @@ const screens = [
   { label: "۱۴ — تسویه‌حساب", node: <SettlementScreen /> },
   { label: "۱۵ — پروفایل", node: <ProfileScreen /> },
   { label: "۱۶ — تنظیمات", node: <SettingsScreen /> },
+  { label: "۱۷ — گفتگوها", node: <ChatListScreen /> },
+  { label: "۱۸ — چت شخصی", node: <PrivateChatScreen /> },
+  { label: "۱۹ — چت گروهی", node: <GroupChatScreen /> },
+  { label: "۲۰ — شروع گفتگو", node: <NewChatScreen /> },
+  { label: "۲۱ — اطلاعات گروه چت", node: <ChatGroupInfoScreen /> },
 ];
 
 const palette = [
