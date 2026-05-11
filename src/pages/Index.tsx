@@ -20,6 +20,12 @@ import { PrivateChatScreen } from "@/components/screens/PrivateChatScreen";
 import { GroupChatScreen } from "@/components/screens/GroupChatScreen";
 import { NewChatScreen } from "@/components/screens/NewChatScreen";
 import { ChatGroupInfoScreen } from "@/components/screens/ChatGroupInfoScreen";
+import { ForgotPasswordScreen } from "@/components/screens/ForgotPasswordScreen";
+import { ChangePasswordScreen } from "@/components/screens/ChangePasswordScreen";
+import { LanguageScreen } from "@/components/screens/LanguageScreen";
+import { NotificationListScreen } from "@/components/screens/NotificationListScreen";
+import { NotificationDetailScreen } from "@/components/screens/NotificationDetailScreen";
+import { LightThemeScreen } from "@/components/screens/LightThemeScreen";
 
 const screens = [
   { label: "۰۱ — خوش‌آمدگویی", node: <WelcomeScreen /> },
@@ -43,6 +49,12 @@ const screens = [
   { label: "۱۹ — چت گروهی", node: <GroupChatScreen /> },
   { label: "۲۰ — شروع گفتگو", node: <NewChatScreen /> },
   { label: "۲۱ — اطلاعات گروه چت", node: <ChatGroupInfoScreen /> },
+  { label: "۲۲ — فراموشی رمز عبور", node: <ForgotPasswordScreen /> },
+  { label: "۲۳ — تغییر رمز عبور", node: <ChangePasswordScreen /> },
+  { label: "۲۴ — انتخاب زبان (فا/EN)", node: <LanguageScreen /> },
+  { label: "۲۵ — اعلان‌ها", node: <NotificationListScreen /> },
+  { label: "۲۶ — جزئیات اعلان", node: <NotificationDetailScreen /> },
+  { label: "۲۷ — تم روشن (Light)", node: <LightThemeScreen /> },
 ];
 
 const palette = [
