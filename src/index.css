@@ -261,4 +261,61 @@
     background: hsl(var(--surface));
     border-color: hsl(var(--border));
   }
+
+  /* Modern floating pill bottom nav */
+  .bottom-nav-pill {
+    @apply absolute bottom-3 left-3 right-3 flex items-center justify-between px-2 py-2;
+    background: hsl(var(--card) / 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--border));
+    border-radius: 28px;
+    box-shadow: 0 14px 40px -12px hsl(0 0% 0% / 0.7), 0 0 0 1px hsl(0 0% 100% / 0.04) inset;
+    z-index: 40;
+  }
+  .bn-item {
+    @apply relative flex items-center justify-center gap-1.5 rounded-2xl px-3 py-2 text-[10px] font-semibold transition-all;
+    color: hsl(var(--muted-foreground));
+    flex: 1;
+  }
+  .bn-item.active {
+    color: hsl(var(--primary-foreground));
+    background: var(--gradient-primary);
+    box-shadow: var(--shadow-elev);
+  }
+  .bn-item .bn-dot {
+    @apply absolute top-1 left-2.5 h-1.5 w-1.5 rounded-full;
+    background: hsl(var(--destructive));
+  }
+
+  /* Light theme variant */
+  .theme-light {
+    --background: 0 0% 98%;
+    --foreground: 220 15% 12%;
+    --surface: 0 0% 100%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 12%;
+    --primary: 211 73% 52%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 14% 94%;
+    --secondary-foreground: 220 15% 12%;
+    --muted: 220 14% 94%;
+    --muted-foreground: 220 10% 42%;
+    --accent: 163 80% 36%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 78% 52%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 14% 88%;
+    --input: 220 14% 96%;
+    --ring: 211 73% 52%;
+    --gradient-surface: linear-gradient(180deg, hsl(0 0% 100%), hsl(220 14% 97%));
+    --gradient-hero: radial-gradient(circle at 20% 10%, hsl(211 73% 52% / 0.12), transparent 55%),
+                     radial-gradient(circle at 80% 90%, hsl(163 80% 36% / 0.10), transparent 55%);
+    --shadow-card: 0 10px 30px -16px hsl(220 30% 30% / 0.18);
+  }
+
+  /* Telegram-style ticks */
+  .tick-row { @apply inline-flex items-center gap-0.5; }
 }
