@@ -1,18 +1,33 @@
-import { Search, Plus, MessageCircle, Home, Users, Wallet, User } from "lucide-react";
+import { Search, Plus, Check, CheckCheck, Pin } from "lucide-react";
 import { StatusBar } from "../PhoneFrame";
+import { BottomNav } from "../BottomNav";
 
-const filters = ["همه", "گروه‌ها", "شخصی"];
-const chats = [
-  { name: "سفر شمال", last: "علی: فاکتور هتل رو فرستادم", time: "۹:۴۲", unread: 3, group: true, g: "from-primary to-accent" },
-  { name: "سارا کریمی", last: "مرسی، فردا حساب می‌کنم 🙏", time: "۹:۱۵", unread: 1, group: false, g: "from-accent to-primary" },
-  { name: "خانواده", last: "مامان: شام خونه ما", time: "دیروز", unread: 0, group: true, g: "from-primary to-[hsl(var(--warning))]" },
-  { name: "رضا محمدی", last: "🎤 پیام صوتی · ۰:۲۴", time: "دیروز", unread: 0, group: false, g: "from-accent to-primary" },
+const filters = ["همه", "گروه‌ها", "شخصی", "خوانده‌نشده"];
+
+type Chat = {
+  name: string; last: string; time: string; unread: number; group: boolean;
+  g: string; mine?: boolean; status?: "sent" | "delivered" | "read"; pinned?: boolean; muted?: boolean;
+};
+
+const chats: Chat[] = [
+  { name: "سفر شمال", last: "علی: فاکتور هتل رو فرستادم", time: "۹:۴۲", unread: 3, group: true, g: "from-primary to-accent", pinned: true },
+  { name: "سارا کریمی", last: "مرسی، فردا حساب می‌کنم 🙏", time: "۹:۱۵", unread: 0, group: false, g: "from-accent to-primary", mine: true, status: "read" },
+  { name: "خانواده", last: "مامان: شام خونه ما", time: "دیروز", unread: 0, group: true, g: "from-primary to-[hsl(var(--warning))]", muted: true },
+  { name: "رضا محمدی", last: "🎤 پیام صوتی · ۰:۲۴", time: "دیروز", unread: 1, group: false, g: "from-accent to-primary" },
   { name: "دوستان دانشگاه", last: "نگار: کی میاد جمعه؟", time: "۲ روز", unread: 5, group: true, g: "from-primary to-accent" },
-  { name: "مریم احمدی", last: "📷 تصویر", time: "۲ روز", unread: 0, group: false, g: "from-accent to-[hsl(var(--warning))]" },
+  { name: "مریم احمدی", last: "باشه، می‌فرستم برات.", time: "۲ روز", unread: 0, group: false, g: "from-accent to-[hsl(var(--warning))]", mine: true, status: "delivered" },
+  { name: "حسین نوری", last: "ok thanks!", time: "هفته پیش", unread: 0, group: false, g: "from-primary to-accent", mine: true, status: "sent" },
 ];
 
+const Ticks = ({ s }: { s?: Chat["status"] }) => {
+  if (!s) return null;
+  if (s === "sent") return <Check className="h-3.5 w-3.5 text-muted-foreground" />;
+  if (s === "delivered") return <CheckCheck className="h-3.5 w-3.5 text-muted-foreground" />;
+  return <CheckCheck className="h-3.5 w-3.5 text-primary" />;
+};
+
 export const ChatListScreen = () => (
-  <div className="min-h-full pb-20">
+  <div className="min-h-full pb-24">
     <StatusBar />
     <div className="app-header">
       <button className="icon-btn" aria-label="جستجو">
@@ -28,7 +43,7 @@ export const ChatListScreen = () => (
         <input className="app-input pr-10" placeholder="جستجو در گفتگوها…" />
       </div>
 
-      <div className="flex gap-2 mt-3 overflow-x-auto">
+      <div className="flex gap-2 mt-3 overflow-x-auto pb-1">
         {filters.map((f, i) => (
           <button key={f} className={`shrink-0 rounded-full px-3.5 py-1.5 text-xs font-semibold ${i === 0 ? "chip chip-primary" : "chip"}`}>
             {f}
@@ -36,24 +51,39 @@ export const ChatListScreen = () => (
         ))}
       </div>
 
-      <div className="mt-4 space-y-1.5">
+      <div className="mt-4 space-y-1">
         {chats.map((c, i) => (
           <div key={i} className="flex items-center gap-3 p-2.5 rounded-2xl hover:bg-secondary/40 transition-colors">
-            <div className={`h-12 w-12 rounded-full bg-gradient-to-br ${c.g} flex items-center justify-center text-sm font-bold`}>
-              {c.name[0]}
+            <div className="relative">
+              <div className={`h-12 w-12 rounded-full bg-gradient-to-br ${c.g} flex items-center justify-center text-sm font-bold`}>
+                {c.name[0]}
+              </div>
+              {!c.group && (
+                <span className="absolute bottom-0 left-0 h-3 w-3 rounded-full bg-accent border-2 border-card" />
+              )}
             </div>
             <div className="flex-1 min-w-0">
-              <div className="flex items-center justify-between">
-                <p className="text-sm font-bold truncate">{c.name}</p>
-                <span className="text-[10px] text-muted-foreground fa-num shrink-0 mr-2">{c.time}</span>
+              <div className="flex items-center justify-between gap-2">
+                <div className="flex items-center gap-1.5 min-w-0">
+                  <p className="text-sm font-bold truncate">{c.name}</p>
+                  {c.muted && <span className="text-muted-foreground text-[10px]">🔕</span>}
+                </div>
+                <span className="text-[10px] text-muted-foreground fa-num shrink-0">{c.time}</span>
               </div>
-              <div className="flex items-center justify-between mt-0.5">
-                <p className="text-[11px] text-muted-foreground truncate">{c.last}</p>
-                {c.unread > 0 && (
-                  <span className="shrink-0 mr-2 h-5 min-w-5 px-1.5 rounded-full bg-primary text-primary-foreground text-[10px] font-bold flex items-center justify-center fa-num">
-                    {c.unread}
-                  </span>
-                )}
+              <div className="flex items-center justify-between mt-0.5 gap-2">
+                <div className="flex items-center gap-1 min-w-0">
+                  {c.mine && <Ticks s={c.status} />}
+                  <p className="text-[11px] text-muted-foreground truncate">{c.last}</p>
+                </div>
+                <div className="flex items-center gap-1.5 shrink-0">
+                  {c.pinned && <Pin className="h-3 w-3 text-muted-foreground" />}
+                  {c.unread > 0 && (
+                    <span className="h-5 min-w-5 px-1.5 rounded-full text-primary-foreground text-[10px] font-bold flex items-center justify-center fa-num"
+                      style={{ background: "var(--gradient-primary)" }}>
+                      {c.unread}
+                    </span>
+                  )}
+                </div>
               </div>
             </div>
           </div>
@@ -66,19 +96,6 @@ export const ChatListScreen = () => (
       گفتگوی جدید
     </button>
 
-    <nav className="bottom-nav">
-      {[
-        { i: Home, l: "خانه" },
-        { i: Users, l: "گروه‌ها" },
-        { i: Wallet, l: "تسویه" },
-        { i: MessageCircle, l: "گفتگوها", active: true },
-        { i: User, l: "پروفایل" },
-      ].map((n, i) => (
-        <button key={i} className="flex flex-col items-center gap-1">
-          <n.i className={`h-5 w-5 ${n.active ? "text-primary" : "text-muted-foreground"}`} />
-          <span className={`text-[10px] ${n.active ? "text-primary font-bold" : "text-muted-foreground"}`}>{n.l}</span>
-        </button>
-      ))}
-    </nav>
+    <BottomNav active="chats" />
   </div>
 );
