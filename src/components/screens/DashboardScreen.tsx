@@ -3,7 +3,7 @@ import { StatusBar } from "../PhoneFrame";
 import { BottomNav } from "../BottomNav";
 
 export const DashboardScreen = () => (
-  <div className="min-h-full pb-20">
+  <div className="min-h-full pb-24">
     <StatusBar />
     <div className="app-header">
       <button className="icon-btn" aria-label="اعلان‌ها">
@@ -74,20 +74,6 @@ export const DashboardScreen = () => (
       گروه جدید
     </button>
 
-    {/* Bottom nav */}
-    <nav className="bottom-nav">
-      {[
-        { i: Home, l: "خانه", active: true },
-        { i: Users, l: "گروه‌ها" },
-        { i: Wallet, l: "تسویه" },
-        { i: MessageCircle, l: "گفتگوها" },
-        { i: User, l: "پروفایل" },
-      ].map((n, i) => (
-        <button key={i} className="flex flex-col items-center gap-1">
-          <n.i className={`h-5 w-5 ${n.active ? "text-primary" : "text-muted-foreground"}`} />
-          <span className={`text-[10px] ${n.active ? "text-primary font-bold" : "text-muted-foreground"}`}>{n.l}</span>
-        </button>
-      ))}
-    </nav>
+    <BottomNav active="home" />
   </div>
 );
