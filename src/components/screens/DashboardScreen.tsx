@@ -1,5 +1,6 @@
-import { Bell, Home, Users, Wallet, User, Plus, TrendingDown, TrendingUp, MessageCircle } from "lucide-react";
+import { Bell, Plus, TrendingDown, TrendingUp } from "lucide-react";
 import { StatusBar } from "../PhoneFrame";
+import { BottomNav } from "../BottomNav";
 
 export const DashboardScreen = () => (
   <div className="min-h-full pb-20">
