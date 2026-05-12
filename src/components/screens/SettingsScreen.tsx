@@ -1,5 +1,5 @@
 import { ScreenHeader } from "../ScreenHeader";
-import { DollarSign, User, Trash2, Info, Globe, Moon, ChevronLeft } from "lucide-react";
+import { DollarSign, User, Trash2, Info, Globe, Moon, ChevronLeft, Send, MessageSquare } from "lucide-react";
 
 export const SettingsScreen = () => (
   <div className="min-h-full">
@@ -63,6 +63,40 @@ export const SettingsScreen = () => (
             <div className="flex-1">
               <p className="text-sm font-bold text-destructive">حذف حساب کاربری</p>
               <p className="text-[11px] text-muted-foreground mt-0.5">حذف دائمی اطلاعات</p>
+            </div>
+            <ChevronLeft className="h-4 w-4 text-muted-foreground" />
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <p className="screen-label mb-2">اتصال به پیام‌رسان‌ها</p>
+        <div className="app-card divide-y divide-border">
+          <div className="flex items-center gap-3 p-4">
+            <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-[hsl(195_100%_45%)] to-[hsl(210_100%_55%)] flex items-center justify-center text-sm font-extrabold text-primary-foreground">ب</div>
+            <div className="flex-1">
+              <p className="text-sm font-bold">بله Bale</p>
+              <p className="text-[11px] text-accent mt-0.5">متصل • @KharjamBot</p>
+            </div>
+            <ChevronLeft className="h-4 w-4 text-muted-foreground" />
+          </div>
+          <div className="flex items-center gap-3 p-4">
+            <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-[hsl(200_90%_55%)] to-[hsl(210_85%_45%)] flex items-center justify-center">
+              <Send className="h-4 w-4 text-primary-foreground -rotate-45" />
+            </div>
+            <div className="flex-1">
+              <p className="text-sm font-bold">تلگرام Telegram</p>
+              <p className="text-[11px] text-muted-foreground mt-0.5">برای اتصال کلیک کنید</p>
+            </div>
+            <ChevronLeft className="h-4 w-4 text-muted-foreground" />
+          </div>
+          <div className="flex items-center gap-3 p-4">
+            <div className="h-9 w-9 rounded-xl bg-primary/15 text-primary flex items-center justify-center">
+              <MessageSquare className="h-4 w-4" />
+            </div>
+            <div className="flex-1">
+              <p className="text-sm font-bold">تنظیمات اعلان‌ها</p>
+              <p className="text-[11px] text-muted-foreground mt-0.5">انتخاب نوع پیام‌های دریافتی</p>
             </div>
             <ChevronLeft className="h-4 w-4 text-muted-foreground" />
           </div>
