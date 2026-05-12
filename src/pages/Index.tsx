@@ -26,6 +26,30 @@ import { LanguageScreen } from "@/components/screens/LanguageScreen";
 import { NotificationListScreen } from "@/components/screens/NotificationListScreen";
 import { NotificationDetailScreen } from "@/components/screens/NotificationDetailScreen";
 import { LightThemeScreen } from "@/components/screens/LightThemeScreen";
+import { ContactsScreen } from "@/components/screens/ContactsScreen";
+import { SkeletonShowcaseScreen } from "@/components/Skeleton";
+import { ResetPasswordScreen } from "@/components/screens/ResetPasswordScreen";
+import { VerifyEmailScreen } from "@/components/screens/VerifyEmailScreen";
+import { VerifyPhoneScreen } from "@/components/screens/VerifyPhoneScreen";
+import { SessionManagementScreen } from "@/components/screens/SessionManagementScreen";
+import { DeleteAccountScreen } from "@/components/screens/DeleteAccountScreen";
+import { OfflineScreen } from "@/components/screens/OfflineScreen";
+import { MaintenanceScreen } from "@/components/screens/MaintenanceScreen";
+import { NotFound404Screen } from "@/components/screens/NotFound404Screen";
+import { ServerError500Screen } from "@/components/screens/ServerError500Screen";
+import { MonthlyReportScreen } from "@/components/screens/MonthlyReportScreen";
+import { SpendingAnalyticsScreen } from "@/components/screens/SpendingAnalyticsScreen";
+import { DebtsSummaryScreen } from "@/components/screens/DebtsSummaryScreen";
+import { PublicProfileScreen } from "@/components/screens/PublicProfileScreen";
+import { ActivityScreen } from "@/components/screens/ActivityScreen";
+import { InviteHistoryScreen } from "@/components/screens/InviteHistoryScreen";
+import { EmptyStateScreen } from "@/components/screens/EmptyStateScreen";
+import { ExportScreen } from "@/components/screens/ExportScreen";
+import { ChatMediaScreen } from "@/components/screens/ChatMediaScreen";
+import { PinnedMessagesScreen } from "@/components/screens/PinnedMessagesScreen";
+import { SearchMessagesScreen } from "@/components/screens/SearchMessagesScreen";
+import { BlockedUsersScreen } from "@/components/screens/BlockedUsersScreen";
+import { MessengerIntegrationsScreen } from "@/components/screens/MessengerIntegrationsScreen";
 
 const screens = [
   { label: "۰۱ — خوش‌آمدگویی", node: <WelcomeScreen /> },
@@ -55,6 +79,30 @@ const screens = [
   { label: "۲۵ — اعلان‌ها", node: <NotificationListScreen /> },
   { label: "۲۶ — جزئیات اعلان", node: <NotificationDetailScreen /> },
   { label: "۲۷ — تم روشن (Light)", node: <LightThemeScreen /> },
+  { label: "۲۸ — مخاطبین", node: <ContactsScreen /> },
+  { label: "۲۹ — حالت بارگذاری (Skeleton)", node: <SkeletonShowcaseScreen /> },
+  { label: "۳۰ — رمز جدید (Reset)", node: <ResetPasswordScreen /> },
+  { label: "۳۱ — تأیید ایمیل", node: <VerifyEmailScreen /> },
+  { label: "۳۲ — تأیید شماره", node: <VerifyPhoneScreen /> },
+  { label: "۳۳ — مدیریت دستگاه‌ها", node: <SessionManagementScreen /> },
+  { label: "۳۴ — حذف حساب", node: <DeleteAccountScreen /> },
+  { label: "۳۵ — حالت آفلاین", node: <OfflineScreen /> },
+  { label: "۳۶ — تعمیرات سرور", node: <MaintenanceScreen /> },
+  { label: "۳۷ — خطای ۴۰۴", node: <NotFound404Screen /> },
+  { label: "۳۸ — خطای ۵۰۰", node: <ServerError500Screen /> },
+  { label: "۳۹ — گزارش ماهانه", node: <MonthlyReportScreen /> },
+  { label: "۴۰ — تحلیل خرج", node: <SpendingAnalyticsScreen /> },
+  { label: "۴۱ — خلاصه بدهی‌ها", node: <DebtsSummaryScreen /> },
+  { label: "۴۲ — پروفایل عمومی", node: <PublicProfileScreen /> },
+  { label: "۴۳ — فعالیت‌ها", node: <ActivityScreen /> },
+  { label: "۴۴ — تاریخچه دعوت‌ها", node: <InviteHistoryScreen /> },
+  { label: "۴۵ — حالت خالی (Empty)", node: <EmptyStateScreen /> },
+  { label: "۴۶ — خروجی گرفتن (Export)", node: <ExportScreen /> },
+  { label: "۴۷ — رسانه‌های چت", node: <ChatMediaScreen /> },
+  { label: "۴۸ — پیام‌های پین‌شده", node: <PinnedMessagesScreen /> },
+  { label: "۴۹ — جستجوی پیام", node: <SearchMessagesScreen /> },
+  { label: "۵۰ — کاربران بلاک‌شده", node: <BlockedUsersScreen /> },
+  { label: "۵۱ — اتصال پیام‌رسان (بله/تلگرام)", node: <MessengerIntegrationsScreen /> },
 ];
 
 const palette = [
