@@ -7,84 +7,89 @@
 
 @layer base {
   :root {
-    /* Dark theme (default) */
-    --background: 0 0% 6%;          /* #0F0F0F */
-    --foreground: 0 0% 100%;        /* #FFFFFF */
+    /* Dark theme — modern Android Material You inspired, vibrant */
+    --background: 230 25% 7%;
+    --foreground: 220 20% 98%;
 
-    --surface: 0 0% 10%;            /* #1A1A1A */
-    --card: 0 0% 12%;               /* #1F1F1F */
-    --card-foreground: 0 0% 100%;
+    --surface: 230 22% 10%;
+    --card: 230 22% 12%;
+    --card-foreground: 220 20% 98%;
 
-    --popover: 0 0% 10%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 230 22% 11%;
+    --popover-foreground: 220 20% 98%;
 
-    --primary: 211 73% 59%;         /* #4A90E2 */
+    --primary: 250 95% 68%;
     --primary-foreground: 0 0% 100%;
-    --primary-soft: 211 73% 59% / 0.14;
+    --primary-soft: 250 95% 68% / 0.16;
+    --primary-glow: 270 95% 72%;
 
-    --accent: 163 100% 39%;         /* #00C896 */
-    --accent-foreground: 0 0% 6%;
-    --accent-soft: 163 100% 39% / 0.14;
+    --accent: 160 84% 50%;
+    --accent-foreground: 230 30% 8%;
+    --accent-soft: 160 84% 50% / 0.16;
 
-    --secondary: 0 0% 16%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 230 18% 17%;
+    --secondary-foreground: 220 20% 98%;
 
-    --muted: 0 0% 14%;
-    --muted-foreground: 0 0% 69%;   /* #AFAFAF */
+    --muted: 230 18% 15%;
+    --muted-foreground: 225 14% 68%;
 
-    --destructive: 0 84% 62%;
+    --destructive: 0 84% 65%;
     --destructive-foreground: 0 0% 100%;
 
-    --warning: 38 95% 60%;
+    --success: 152 76% 48%;
+    --warning: 38 100% 62%;
+    --info: 200 95% 62%;
 
-    --border: 0 0% 18%;
-    --input: 0 0% 14%;
-    --ring: 211 73% 59%;
+    --border: 230 18% 20%;
+    --input: 230 22% 14%;
+    --ring: 250 95% 68%;
 
-    --radius: 1rem;
+    --radius: 0.875rem; /* 14px — Android standard */
 
-    /* Gradients & shadows */
-    --gradient-primary: linear-gradient(135deg, hsl(211 73% 59%), hsl(200 85% 55%));
-    --gradient-accent: linear-gradient(135deg, hsl(163 100% 39%), hsl(180 80% 45%));
-    --gradient-surface: linear-gradient(180deg, hsl(0 0% 12%), hsl(0 0% 9%));
-    --gradient-hero: radial-gradient(circle at 20% 10%, hsl(211 73% 59% / 0.25), transparent 55%),
-                     radial-gradient(circle at 80% 90%, hsl(163 100% 39% / 0.18), transparent 55%);
+    --gradient-primary: linear-gradient(135deg, hsl(250 95% 68%), hsl(280 90% 65%));
+    --gradient-accent: linear-gradient(135deg, hsl(160 84% 50%), hsl(190 90% 55%));
+    --gradient-surface: linear-gradient(180deg, hsl(230 22% 13%), hsl(230 22% 10%));
+    --gradient-hero: radial-gradient(900px circle at 10% -10%, hsl(250 95% 68% / 0.28), transparent 50%),
+                     radial-gradient(700px circle at 100% 10%, hsl(160 84% 50% / 0.18), transparent 55%),
+                     radial-gradient(600px circle at 50% 110%, hsl(280 90% 65% / 0.20), transparent 55%);
+    --gradient-app-bg: radial-gradient(900px circle at 0% 0%, hsl(250 95% 68% / 0.12), transparent 45%),
+                       radial-gradient(800px circle at 100% 0%, hsl(160 84% 50% / 0.08), transparent 45%),
+                       linear-gradient(180deg, hsl(230 25% 8%), hsl(230 28% 5%));
 
-    --shadow-card: 0 10px 30px -12px hsl(0 0% 0% / 0.6);
-    --shadow-elev: 0 20px 50px -20px hsl(211 73% 59% / 0.45);
-    --shadow-accent: 0 16px 40px -16px hsl(163 100% 39% / 0.55);
+    --shadow-card: 0 8px 24px -10px hsl(230 50% 2% / 0.7), 0 2px 6px -2px hsl(230 50% 2% / 0.4);
+    --shadow-elev: 0 10px 24px -8px hsl(250 95% 50% / 0.45);
+    --shadow-accent: 0 10px 24px -8px hsl(160 84% 40% / 0.5);
 
-    --sidebar-background: 0 0% 10%;
-    --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 211 73% 59%;
+    --sidebar-background: 230 22% 10%;
+    --sidebar-foreground: 220 20% 95%;
+    --sidebar-primary: 250 95% 68%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 15%;
-    --sidebar-accent-foreground: 0 0% 95%;
-    --sidebar-border: 0 0% 18%;
-    --sidebar-ring: 211 73% 59%;
+    --sidebar-accent: 230 18% 16%;
+    --sidebar-accent-foreground: 220 20% 95%;
+    --sidebar-border: 230 18% 20%;
+    --sidebar-ring: 250 95% 68%;
   }
 
   .dark {
-    /* Same as root — app is dark-first */
-    --background: 0 0% 6%;
-    --foreground: 0 0% 100%;
-    --card: 0 0% 12%;
-    --card-foreground: 0 0% 100%;
-    --popover: 0 0% 10%;
-    --popover-foreground: 0 0% 100%;
-    --primary: 211 73% 59%;
+    --background: 230 25% 7%;
+    --foreground: 220 20% 98%;
+    --card: 230 22% 12%;
+    --card-foreground: 220 20% 98%;
+    --popover: 230 22% 11%;
+    --popover-foreground: 220 20% 98%;
+    --primary: 250 95% 68%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 0 0% 16%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 0 0% 14%;
-    --muted-foreground: 0 0% 69%;
-    --accent: 163 100% 39%;
-    --accent-foreground: 0 0% 6%;
-    --destructive: 0 84% 62%;
+    --secondary: 230 18% 17%;
+    --secondary-foreground: 220 20% 98%;
+    --muted: 230 18% 15%;
+    --muted-foreground: 225 14% 68%;
+    --accent: 160 84% 50%;
+    --accent-foreground: 230 30% 8%;
+    --destructive: 0 84% 65%;
     --destructive-foreground: 0 0% 100%;
-    --border: 0 0% 18%;
-    --input: 0 0% 14%;
-    --ring: 211 73% 59%;
+    --border: 230 18% 20%;
+    --input: 230 22% 14%;
+    --ring: 250 95% 68%;
   }
 }
 
@@ -100,6 +105,8 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-feature-settings: "ss01", "ss02";
+    background-image: var(--gradient-app-bg);
+    background-attachment: fixed;
   }
 
   /* Persian digit rendering */
@@ -115,11 +122,11 @@
     height: 680px;
     border-radius: 44px;
     background: hsl(var(--background));
-    border: 10px solid hsl(0 0% 4%);
+    border: 10px solid hsl(230 30% 3%);
     box-shadow:
       0 40px 80px -30px hsl(0 0% 0% / 0.9),
-      0 0 0 1px hsl(0 0% 20%),
-      inset 0 0 0 1px hsl(0 0% 15%);
+      0 0 0 1px hsl(230 20% 22%),
+      inset 0 0 0 1px hsl(230 20% 14%);
     overflow: hidden;
     position: relative;
     flex-shrink: 0;
@@ -132,7 +139,7 @@
     transform: translateX(-50%);
     width: 110px;
     height: 26px;
-    background: hsl(0 0% 3%);
+    background: hsl(230 30% 2%);
     border-radius: 0 0 18px 18px;
     z-index: 50;
   }
@@ -143,6 +150,7 @@
     overflow-y: auto;
     overflow-x: hidden;
     scrollbar-width: none;
+    background: var(--gradient-app-bg);
   }
   .phone-screen::-webkit-scrollbar { display: none; }
 
@@ -156,77 +164,97 @@
   }
 
   .icon-btn {
-    @apply h-10 w-10 rounded-full flex items-center justify-center transition-colors;
+    @apply h-10 w-10 rounded-xl flex items-center justify-center transition-all;
     background: hsl(var(--secondary));
     color: hsl(var(--foreground));
+    border: 1px solid hsl(var(--border));
   }
-  .icon-btn:hover { background: hsl(0 0% 20%); }
+  .icon-btn:hover { background: hsl(var(--muted)); transform: translateY(-1px); }
+  .icon-btn:active { transform: translateY(0); }
 
   .app-card {
     background: var(--gradient-surface);
     border: 1px solid hsl(var(--border));
-    border-radius: 1.25rem;
+    border-radius: var(--radius);
     box-shadow: var(--shadow-card);
   }
 
+  /* Form: floating-feel input, Material-3 inspired */
   .app-input {
-    @apply w-full rounded-2xl px-4 py-3.5 text-sm outline-none transition-all;
+    @apply w-full px-4 py-3.5 text-sm outline-none transition-all;
     background: hsl(var(--input));
     color: hsl(var(--foreground));
-    border: 1px solid hsl(var(--border));
+    border: 1.5px solid hsl(var(--border));
+    border-radius: 12px;
   }
   .app-input::placeholder { color: hsl(var(--muted-foreground)); }
+  .app-input:hover { border-color: hsl(var(--muted-foreground) / 0.5); }
   .app-input:focus {
     border-color: hsl(var(--primary));
-    box-shadow: 0 0 0 3px hsl(var(--primary) / 0.18);
+    background: hsl(var(--input) / 0.7);
+    box-shadow: 0 0 0 4px hsl(var(--primary) / 0.18);
   }
   .app-input.error {
     border-color: hsl(var(--destructive));
-    box-shadow: 0 0 0 3px hsl(var(--destructive) / 0.18);
+    box-shadow: 0 0 0 4px hsl(var(--destructive) / 0.18);
   }
 
+  /* Android Material 3 — filled buttons, 12px radius */
   .btn-primary {
-    @apply w-full rounded-2xl py-3.5 text-sm font-semibold transition-all;
+    @apply w-full py-3.5 text-sm font-bold uppercase tracking-wide transition-all;
     background: var(--gradient-primary);
     color: hsl(var(--primary-foreground));
+    border-radius: 12px;
     box-shadow: var(--shadow-elev);
+    letter-spacing: 0.02em;
   }
-  .btn-primary:hover { filter: brightness(1.08); }
+  .btn-primary:hover { filter: brightness(1.1); transform: translateY(-1px); }
+  .btn-primary:active { transform: translateY(0); filter: brightness(0.95); }
 
   .btn-accent {
-    @apply w-full rounded-2xl py-3.5 text-sm font-semibold transition-all;
+    @apply w-full py-3.5 text-sm font-bold transition-all;
     background: var(--gradient-accent);
     color: hsl(var(--accent-foreground));
+    border-radius: 12px;
     box-shadow: var(--shadow-accent);
   }
+  .btn-accent:hover { filter: brightness(1.08); transform: translateY(-1px); }
 
   .btn-secondary {
-    @apply w-full rounded-2xl py-3.5 text-sm font-semibold transition-colors;
+    @apply w-full py-3.5 text-sm font-semibold transition-all;
     background: hsl(var(--secondary));
     color: hsl(var(--foreground));
-    border: 1px solid hsl(var(--border));
+    border: 1.5px solid hsl(var(--border));
+    border-radius: 12px;
   }
-  .btn-secondary:hover { background: hsl(0 0% 20%); }
+  .btn-secondary:hover { background: hsl(var(--muted)); border-color: hsl(var(--primary) / 0.5); }
 
   .btn-text {
-    @apply rounded-xl px-3 py-2 text-sm font-medium transition-colors;
+    @apply px-3 py-2 text-sm font-semibold transition-colors;
     color: hsl(var(--primary));
+    border-radius: 10px;
   }
   .btn-text:hover { background: hsl(var(--primary) / 0.1); }
 
   .btn-destructive {
-    @apply w-full rounded-2xl py-3.5 text-sm font-semibold transition-colors;
+    @apply w-full py-3.5 text-sm font-semibold transition-colors;
     background: hsl(var(--destructive) / 0.15);
     color: hsl(var(--destructive));
-    border: 1px solid hsl(var(--destructive) / 0.35);
+    border: 1.5px solid hsl(var(--destructive) / 0.35);
+    border-radius: 12px;
   }
+  .btn-destructive:hover { background: hsl(var(--destructive) / 0.22); }
 
+  /* Extended FAB — Android M3 */
   .fab {
-    @apply absolute bottom-6 h-14 rounded-full px-5 flex items-center gap-2 text-sm font-semibold;
+    @apply absolute bottom-6 h-14 px-5 flex items-center gap-2 text-sm font-bold;
     background: var(--gradient-primary);
     color: hsl(var(--primary-foreground));
     box-shadow: var(--shadow-elev);
+    border-radius: 16px;
   }
+  .fab:hover { filter: brightness(1.1); }
+
 
   .chip {
     @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium;
